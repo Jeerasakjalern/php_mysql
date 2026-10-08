@@ -9,7 +9,7 @@
 <body>
     <?php
         require 'conn.php';
-        $sql_update="INSERT INTO studentbio(sid,sname,slastname,address,telephone) VALUES ('$_POST[sid]','$_POST[sname]','$_POST[slastname]' ,'$_POST[address]' ,'$_POST[telephone]')";
+        $sql_update="INSERT INTO dvd(dvdid,dvdname,year_release,dvdduration,genre) VALUES ('$_POST[dvdid]','$_POST[dvdname]','$_POST[year_release]' ,'$_POST[dvdduration]' ,'$_POST[genre]')";
 
         $result= $conn->query($sql_update);
 
@@ -18,7 +18,7 @@
         } else {
 
         echo "Insert Success <br>";
-        header("refresh: 1; url=mainmenu.php");
+        header("refresh: 1; url=mainmovie.php");
         }
 
     ?>

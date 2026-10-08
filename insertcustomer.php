@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form method="post" action="insertbiosuccess.php">
-	     <p>
+<form method="post" action="insertcustomersuccess.php">
+        <p>
 
-            <label>รหัสนักศึกษา</label>
-            <input type="text" name="sid" id="sid">
+            <label>รหัสลูกค้า</label>
+            <input type="text" name="cusid" id="cusid">
 
         </p>
         <p>
 
             <label>ชื่อ</label>
-            <input type="text" name="sname" id="sname">
+            <input type="text" name="cusname" id="cusname">
 
         </p>
 
@@ -25,15 +25,15 @@
 
             <label>นามสกุล</label>
 
-            <input type="text" name="slastname" id="slastname">
+            <input type="text" name="cussurname" id="cussurname">
 
         </p>
 
         <p>
 
-            <label>ที่อยู่</label>
+            <label>เพศ</label>
 
-            <input type="text" name="address" id="address">
+            <input type="text" name="cusgender" id="cusgender">
 
         </p>
 
@@ -41,11 +41,11 @@
 
             <label>เบอร์โทร</label>
 
-            <input type="text" name="telephone" id="telephone">
+            <input type="text" name="custel" id="custel">
 
         </p>
         <input type="submit" value="บันทึก">
-        <a href='mainmenu.php'> <button> Home </button></a>
+        <a href='maindvd.php'> <button> Home </button></a>
     </form>
 </body>
 </html>

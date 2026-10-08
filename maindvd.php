@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-$conn = new mysqli('localhost','root','','student');
+$conn = new mysqli('localhost','root','','dvdcustomer');
 $conn->query("SET NAMES utf8");
 if($conn->connect_error){
     die("Connection Fail God damn it ". $conn->$conn_error);
@@ -17,28 +17,36 @@ if($conn->connect_error){
 ?>
 <?php
             require 'conn.php';
-            $sql = "SELECT * FROM studentbio";
+            $sql = "SELECT * FROM customer";
             $result = $conn->query($sql);
             if(!$result){
                 die("Error : ".$conn->$conn_error);
             }
 ?>
-<h1>Student Bio</h1><br> 
-        <table>
+
+<h1>Customer</h1><br> 
+    <div>
+        <table border="1">
             <thead>
                 <tr>
-                    <th>รหัสนักศึกษา</th>
-                    <th>ชื่อ-นามสกุล</th>
-                    <th>ที่อยู่</th>
+                    <th>CustomerID</th>
+                    <th>ชื่อ</th>
+                    <th>นามสกุล</th>
+                    <th>เพศ</th>
                     <th>เบอร์โทร</th>
-                    <th> ธุรกรรม </th>
                 </tr>
             </thead>
             <tbody>
                 <?php // show data by fetch from database
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo"<tr><td>".$row["sid"]."</td>"."<td>".$row["sname"]." ".$row["slastname"]."</td>"."<td>".$row["address"]."</td>"."<td>".$row["telephone"]."</td>"."<td>"."<a href='editbio.php?sid=".$row["sid"]."'><button> Edit </button></a>"."</td>";
+                            echo"<tr>";
+                            echo"<td>".$row["cusid"]."</td>";
+                            echo"<td>".$row["cusname"]."</td>";
+                            echo"<td>".$row["cussurname"]."</td>";
+                            echo"<td>".$row["cusgender"]."</td>";
+                            echo"<td>".$row["custel"]."</td>";
+                            echo"<td>"."<a href='editcustomer.php?cusid=".$row["cusid"]."'><button> Edit </button></a>"."</td>";
                             echo "</tr>";    
                         }
                     }else {
@@ -48,7 +56,8 @@ if($conn->connect_error){
                 ?>
             </tbody>
         </table> 
+    </div>
         <br>
-        <a href='insertbio.php'><button> Insert Student</button></a>
+        <a href='insertcustomer.php'><button> เพิ่มสมาชิก</button></a>
 </body>
 </html>

@@ -1,4 +1,13 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <?php
         if(!isset($_GET['sid'])){
             header("refresh: 0; url=mainmenu.php");
         }
@@ -43,4 +52,6 @@
         <input type="submit" value="บันทึก">
         <a href='mainmenu.php'><button> Home</button></a>
     </form>
+</body>
+</html>
 

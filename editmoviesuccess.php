@@ -8,7 +8,7 @@
 <body>
         <?php
             require 'conn.php';
-            $sql_update="UPDATE studentbio SET sname='$_POST[sname]',slastname='$_POST[slastname]' ,address='$_POST[address]' ,telephone='$_POST[telephone]' WHERE sid='$_POST[sid]' ";
+            $sql_update="UPDATE dvd SET dvdname='$_POST[dvdname]',year_release='$_POST[year_release]' ,dvdduration='$_POST[dvdduration]' ,genre='$_POST[genre]' WHERE dvdid='$_POST[dvdid]' ";
 
             $result= $conn->query($sql_update);
 
@@ -17,7 +17,7 @@
             } else {
 
             echo "Edit Success <br>";
-            header("refresh: 1; url=mainmenu.php");
+            header("refresh: 1; url=mainmovie.php");
             }
 
         ?>
